@@ -1,4 +1,6 @@
-<x-app-layout>
+div<x-app-layout>
+
+
     <section>
         <header>
             <h2 class="text-lg font-medium text-gray-900">
@@ -42,4 +44,5 @@
             </div>
         </form>
     </section>
+
 </x-app-layout>

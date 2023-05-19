@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\BaseController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Database\Console\Migrations\BaseCommand;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,26 +17,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Inicio
+Route::controller(BaseController::class)->group(function(){
+    Route::get('/', 'main')->name('main');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/vistaprueba', function(){
-        return view('pruebas.vista1');
-    });
+    //* Consumir api
     Route::get('/test', [ApiController::class, 'getData']);
 });
 
 require __DIR__.'/auth.php';
 
-Route::get('/example', function () {
-    return view('example');
-});
+
+
+//* Inicio antiguo
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+//* Dasboard con middleware  
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');

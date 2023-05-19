@@ -4,7 +4,6 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TripsController;
-use Illuminate\Database\Console\Migrations\BaseCommand;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,9 +25,11 @@ Route::controller(BaseController::class)->group(function(){
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/trips', function () {
     return view('trips.create');
 })->middleware(['auth', 'verified'])->name('trips');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

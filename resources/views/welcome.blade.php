@@ -18,7 +18,6 @@
         @include('partials.body')
         @include('partials.footer')
         <script defer src="{{asset('js/bundle.js')}}"></script>
-        
-        
+
     </body>
 </html>

@@ -8,5 +8,6 @@ class BaseController extends Controller
 {
     public function main(){
         return view('example');
+        // return view('main.pruebas');
     }
 }

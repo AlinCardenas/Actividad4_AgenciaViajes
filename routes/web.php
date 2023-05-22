@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubscriptionsController;
 use App\Http\Controllers\TripsController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,17 +39,20 @@ Route::middleware('auth')->group(function () {
     Route::get('/test', [ApiController::class, 'getData']);
 });
 
+//Ruta suscripcion
+Route::post('/suscripcion', [SubscriptionsController::class, 'store'])->name('suscripcion.store');
 
 require __DIR__.'/auth.php';
 
 
 
-//* Inicio antiguo
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+//Inicio antiguo
 
-//* Dasboard con middleware  
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// //Dasboard con middleware  
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

@@ -33,3 +33,7 @@ require __DIR__.'/auth.php';
 Route::get('/example', function () {
     return view('example');
 });
+
+Route::get('/payment', function () {
+    return view('flightReservations.payment');
+});

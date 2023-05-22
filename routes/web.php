@@ -49,8 +49,8 @@ require __DIR__.'/auth.php';
 //Inicio antiguo
 
 Route::get('/', function () {
-    // return view('welcome');
-    return view('example');
+    return view('welcome');
+    // return view('example');
 });
 
 // //Dasboard con middleware  

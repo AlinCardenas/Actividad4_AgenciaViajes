@@ -1,4 +1,4 @@
-<section class="ji gp uq">
+<section class="ji gp uq ml-5">
     <x-title-section title="Top destinos más buscados en México" contenido="Escoge el mejor vuelo para tu próxima aventura"/>
 
     <div class="bb ye ki xn vq jb jo">

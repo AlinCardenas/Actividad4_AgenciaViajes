@@ -3,7 +3,6 @@
        @scroll.window="stickyMenu = (window.pageYOffset > 20) ? true : false">
        <div class="bb ze ki xn 2xl:ud-px-0 oo wf yf i">
            <div class="vd to/4 tc wf yf">
-               <!-- <a href="index.html"> -->
                <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:2rem"
                    class="bg-gray-100 dark:bg-gray-900">
                    <path

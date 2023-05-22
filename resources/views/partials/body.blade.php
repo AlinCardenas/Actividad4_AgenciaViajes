@@ -1,3 +1,4 @@
+<x-app-layout>
 <main>
     <!-- ===== Hero Start ===== -->
     <section class="gj">
@@ -169,3 +170,4 @@
 
     <!-- ===== CTA End ===== -->
 </main>
+</x-app-layout>

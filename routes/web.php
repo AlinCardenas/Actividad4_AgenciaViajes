@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FlightReservation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,11 @@ Route::get('/example', function () {
     return view('example');
 });
 
+Route::resource('flightReservations', FlightReservation::class);
+
+//ruta probar paymentform
 Route::get('/payment', function () {
-    return view('flightReservations.payment');
+    return view('flightReservations.testpayment');
 });
+//ruta de forma de pago
+Route::post('/payment', [FlightReservation::class, 'paymentstore'])->name('paymentstore');

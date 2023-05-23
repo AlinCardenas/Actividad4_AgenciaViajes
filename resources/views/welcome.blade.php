@@ -12,7 +12,7 @@
         <div class="flex flex-col w-full bg-tertiary ">
             {{--* Imagen de arriba --}}
             <div class="relative">
-                <img src="https://fastly.picsum.photos/id/1/5000/3333.jpg?hmac=Asv2DU3rA_5D1xSe22xZK47WEAN0wjWeFOhzd13ujW4" alt="" class="h-[450px] w-full" />
+                <img src="https://i.postimg.cc/ZYwD02XS/portada-min.jpg" alt="" class="h-[450px] w-full shadow-2xl" />
                 <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-white">
                     <h1>everv</h1>
                 </div>

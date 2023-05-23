@@ -27,7 +27,7 @@ export default {
             'gray-dark': '#273444',
             'gray': '#8492a6',
             'gray-light': '#d3dce6',
-            'primary': '#00aee6',
+            'primary': '#4cacd7',
             'aux0': '#11eee9',
             'secondary': '#b1d4e5',
             'tertiary': '#f6f6f5',

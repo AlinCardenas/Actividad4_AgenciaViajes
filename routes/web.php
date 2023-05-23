@@ -23,6 +23,7 @@ Route::controller(BaseController::class)->group(function(){
     Route::get('/', 'main')->name('main');
 });
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -52,6 +53,17 @@ Route::get('/', function () {
     return view('welcome');
     // return view('example');
 });
+
+
+Route::get('/vuelos', function () {
+    return view('flights.index');
+});
+Route::get('/vuelos/reservar', function () {
+    return view('flights.create');
+});
+
+
+
 
 // //Dasboard con middleware  
 // Route::get('/dashboard', function () {

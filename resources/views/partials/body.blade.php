@@ -3,11 +3,11 @@
     <x-title-section title="Top destinos más buscados en México" contenido="Escoge el mejor vuelo para tu próxima aventura"/>
     <div class="bb ye ki xn vq jb jo">
         <div class="wc qf pn xo zf iq">
-            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" />
-            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" />
-            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" />
-            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" />
-            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" />
+            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
+            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
+            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
+            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
+            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
         </div>
     </div>
 

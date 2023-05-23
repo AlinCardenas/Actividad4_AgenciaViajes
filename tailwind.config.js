@@ -27,10 +27,11 @@ export default {
             'gray-dark': '#273444',
             'gray': '#8492a6',
             'gray-light': '#d3dce6',
-            'primary': '#F1F6F5',
-            'secondary': '#4B56D2',
-            'tertiary': '#472183',
-            'aux': '#472183'
+            'primary': '#00aee6',
+            'aux0': '#11eee9',
+            'secondary': '#b1d4e5',
+            'tertiary': '#f6f6f5',
+            'aux': '#123962'
           },
     },
 

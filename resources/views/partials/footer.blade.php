@@ -1,4 +1,4 @@
-<footer class="bg-blue text-center text-white dark:bg-neutral-600 dark:text-neutral-200">
+<footer class="bg-primary text-center text-white dark:bg-neutral-600 dark:text-neutral-200">
     <div class="container p-6">
         <div class="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
             <div class="mb-6 lg:mb-0">
@@ -23,7 +23,7 @@
     </div>
 
     <!--Copyright section-->
-    <div class="bg-blue p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
+    <div class="bg-primary p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
         © 2023 Copyright:
         <a href="#">Bit technologies</a>
     </div>

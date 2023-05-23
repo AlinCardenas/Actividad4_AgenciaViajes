@@ -15,31 +15,11 @@
     <x-title-section title="Los vuelos a mejor precio" contenido="La aventura de espera, no pierdas más tiempo" class="mt-[100px]"/>
     <div class="bb ye ki xn vq jb jo">
         <div class="wc qf pn xo zf iq">
-            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro">
-                <x-slot name="descripcion">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, culpa harum aperiam earum suscipit porro, qui maxime laborum quia blanditiis sit cum repellat sunt accusantium adipisci vel. Odio, totam natus.
-                </x-slot>
-            </x-card-main-vuelo>
-            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro">
-                <x-slot name="descripcion">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, culpa harum aperiam earum suscipit porro, qui maxime laborum quia blanditiis sit cum repellat sunt accusantium adipisci vel. Odio, totam natus.
-                </x-slot>
-            </x-card-main-vuelo>
-            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro">
-                <x-slot name="descripcion">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, culpa harum aperiam earum suscipit porro, qui maxime laborum quia blanditiis sit cum repellat sunt accusantium adipisci vel. Odio, totam natus.
-                </x-slot>
-            </x-card-main-vuelo>
-            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro">
-                <x-slot name="descripcion">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, culpa harum aperiam earum suscipit porro, qui maxime laborum quia blanditiis sit cum repellat sunt accusantium adipisci vel. Odio, totam natus.
-                </x-slot>
-            </x-card-main-vuelo>
-            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro">
-                <x-slot name="descripcion">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, culpa harum aperiam earum suscipit porro, qui maxime laborum quia blanditiis sit cum repellat sunt accusantium adipisci vel. Odio, totam natus.
-                </x-slot>
-            </x-card-main-vuelo>
+            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>
+            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>
+            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>
+            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>
+            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>
         </div>
     </div>
 

@@ -22,7 +22,5 @@
             </div>
             <button type="submit"  class=" shadow-lg px-4 py-2 mt-4 text-white bg-blue-600 hover:bg-blue-500 rounded-md mb-4">Reservar</button>
         </div>
-        
-
     </div>
 </x-plantilla>

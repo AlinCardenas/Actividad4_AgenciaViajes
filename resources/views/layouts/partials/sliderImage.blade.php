@@ -15,13 +15,12 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
             </svg>
         </button>
-        <img :src="currentImage()" class="rounded-sm blur-sm">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <img :src="currentImage()" class="opacity-50 blur-xl">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
             <div class="carousel-caption">
-                <p x-text="currentCaption()[0]" class="text-center text-4xl text-white font-bold"></p>
-                <hr
-                    class="h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-50 to-transparent opacity-25 dark:opacity-100" />
-                <p x-text="currentCaption()[1]" class="text-center text-2xl text-white font-bold mt-4""></p>
+                <p x-text="currentCaption()[0]" class="text-center text-4xl text-black font-bold"></p>
+                <hr class="border-black"/>
+                <p x-text="currentCaption()[1]" class="text-center text-2xl text-black font-bold mt-4""></p>
             </div>
         </div>
       </div>

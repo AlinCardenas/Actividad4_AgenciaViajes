@@ -22,6 +22,6 @@
             {{ $slot }}
         </main>
     </body>
-    <script defer src="{{asset('js/bundle.js')}}"></script>
     <script src=" {{asset('js/slider.js')}}"></script>
+    <script defer src="{{asset('js/bundle.js')}}"></script>
 </html>

@@ -1,4 +1,4 @@
-<x-plantilla>
+<x-plantilla title="Reservar">
     <div class="container max-w-[7xl] mx-auto mt-4">
 
         <div class=" rounded-lg p-2 border-slate-300">

@@ -1,3 +1,4 @@
+@props(['title'])
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,7 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     @include('flatpickr::components.style')
     @include('flatpickr::components.script')
-    <title>Document</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <title>{{$title}}</title>
 </head>
 <body>
     {{$slot}}

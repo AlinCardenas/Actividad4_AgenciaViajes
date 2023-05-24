@@ -1,14 +1,18 @@
-@dump($hoteles)
+
 <section class="ji gp uq ml-5">
     {{--! Destinos --}}
     <x-title-section title="Top destinos más buscados en México" contenido="Escoge el mejor vuelo para tu próxima aventura"/>
     <div class="bb ye ki xn vq jb jo">
         <div class="wc qf pn xo zf iq">
-            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
-            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
-            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
-            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
-            <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
+
+            @foreach ($destinos as $item)
+                @php
+                    $contenedor = json_decode($item['images']);
+                    $ruta = str_replace('public/images/', '', $contenedor[0]);
+                    
+                @endphp
+                <x-card-main :ruta="$ruta" :title="$item['name']" :country="$item['addresses']['country']" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
+            @endforeach
         </div>
     </div>
 

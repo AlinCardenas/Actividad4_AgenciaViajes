@@ -1,27 +1,39 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<x-app-layout>
+    <div class="">
+        <x-nav-menu userimg="https://i.pinimg.com/originals/f5/ef/c7/f5efc7bbad1b8f9a5cfdd29be1ccc385.jpg" username="Daniel Delgado">
+            <x-li-nav-menu name="Inicio" icon="fa-solid fa-robot mr-2" route="/" />
+            <x-li-nav-menu name="Inicio" icon="fa-solid fa-robot mr-2" route="/" />
+            <x-li-nav-menu name="Inicio" icon="fa-solid fa-robot mr-2" route="/" />
+        </x-nav-menu>
+    </div>
 
-        <title>Agencia de Viajes</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-        <link href="{{asset('css/style.css')}}" rel="stylesheet">
-        <link href="{{asset('css/theme.css')}}" rel="stylesheet">
-
-    </head>
-    <body x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': true }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
-    $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" :class="{ 'b eh': darkMode === true }">
-        @include('partials.navbar')
-        @include('partials.body')
-        @include('partials.footer')
-        <script defer src="{{asset('js/bundle.js')}}"></script>
-        <script defer src="{{asset('js/loopple.js')}}"></script>
-        
-        
-    </body>
-</html>
+    <div class="ml-[255px]">
+        <div class="flex flex-col w-full bg-tertiary ">
+            {{--* Imagen de arriba --}}
+            <div class="relative">
+                <img src="https://i.postimg.cc/ZYwD02XS/portada-min.jpg" alt="" class="h-[500px] w-full shadow-2xl" />
+                <div class="absolute right-0 h-full w-[350px] top-1/2 -translate-y-1/2  text-white bg-white" style="clip-path: polygon(10% 0, 100% 0, 100% 100%, 12% 100%, 6% 86%, 3% 72%, 2% 56%, 3% 38%, 4% 27%, 6% 15%); ">
+                    <div class="flex flex-col justify-center h-full items-center transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">
+                        <p class=" text-center text-4xl text-aux">Destino</p>
+                        <hr class="border-1 border-gray-dark w-5/12 mb-4 mt-2">
+                        <p class="text-text2 font-bold text-center text-2xl">Precio: $328.23</p>
+                        <div class="flex w-full mt-[100px]">
+                            <div class="animate-car">
+                              <img src="https://i.postimg.cc/zGML3KkY/viajar.png" alt="" class="w-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+            {{--* Cuerpo y card perfil --}}
+            <div class="mx-[100px]">
+                @include('partials.body')
+                <x-card-user-opc/>
+            </div>
+            {{--* Footer --}}
+            <div class="">
+                @include('partials.footer')
+            </div>
+        </div>
+    </div>
+</x-app-layout>

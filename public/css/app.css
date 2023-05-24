@@ -1,0 +1,25 @@
+@keyframes diagonal-left {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-20px, 20px);
+    }
+  }
+  
+.animate-diagonal-left {
+    animation: diagonal-left 0.5s linear infinite alternate;
+}
+
+@keyframes car {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(300px);
+    }
+  }
+  
+.animate-car {
+    animation: car 3s linear infinite;
+}

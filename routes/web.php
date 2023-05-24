@@ -36,6 +36,8 @@ Route::get('/hotels',function()
 {
     return view('userViews.hotels');
 })->name('hotels.index');
+
+
 Route::get('/dashboard', function () 
 {
     return view('dashboard');

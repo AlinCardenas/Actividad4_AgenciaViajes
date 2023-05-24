@@ -9,26 +9,29 @@ class BaseController extends Controller
 {
 
     //* Obtiene datos
-    public function getData($ruta){
+    public function getData($ruta)
+    {
         $client = new Client();
         return $rspeonse = $client->request('GET', 'https://752a-2806-2f0-9f00-ffaf-204c-5c35-4115-5b18.ngrok-free.app/api/' . $ruta, [
             'query' => ['limit' => 8]
         ]);
     }
 
-    public function main(){
-        $destinos = json_decode($this->getData('destinations')->getBody(), true);
-        $hoteles = json_decode($this->getData('hotels')->getBody(), true);
-        $vuelos = json_decode($this->getData('flights')->getBody(), true);
-        
-        $destinos = array_reverse($destinos);
-        $hoteles = array_reverse($hoteles);
-        $vuelos = array_reverse($vuelos);
-        $destinos = array_splice($destinos, 0, 9);
-        $hoteles = array_splice($hoteles, 0, 9);
-        $vuelos = array_splice($vuelos, 0, 9);
+    public function reformar($objeto, $cant = 9)
+    {
+        $fase1 = json_decode($objeto, true);
+        $fase1 = array_reverse($fase1);
+        $val = array_slice($fase1, 0, $cant);
+        return $val;
+    }
 
+    public function main()
+    {
+        $destinos = $this->reformar($this->getData('destinations')->getBody());
+        $hoteles = $this->reformar($this->getData('hotels')->getBody());
+        $vuelos = $this->reformar($this->getData('flights')->getBody());
+        $aerolineas = $this->reformar($this->getData('airlines')->getBody(), 4);
 
-        return view('welcome', compact('hoteles', 'vuelos', 'destinos'));
+        return view('welcome', compact('hoteles', 'vuelos', 'destinos', 'aerolineas'));
     }
 }

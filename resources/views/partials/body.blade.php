@@ -31,10 +31,12 @@
     {{--! Aerolineas --}}
     <x-title-section title="Nuestras aerolineas" contenido="El personal que hace posible tus sueños." class="mt-[150px]"/>
     <div class="flex justify-around mt-[50px]">
-        <x-avatar ruta="https://tecdn.b-cdn.net/img/new/avatars/5.webp" nombre="Aeromexico" />
-        <x-avatar ruta="https://tecdn.b-cdn.net/img/new/avatars/5.webp" nombre="Aeromexico" />
-        <x-avatar ruta="https://tecdn.b-cdn.net/img/new/avatars/5.webp" nombre="Aeromexico" />
-        <x-avatar ruta="https://tecdn.b-cdn.net/img/new/avatars/5.webp" nombre="Aeromexico" />
+        @foreach ($aerolineas as $item)
+            @php
+                $ruta3 = str_replace('public/img/', '', $item['logo']);
+            @endphp
+            <x-avatar :ruta="$ruta3" :nombre="$item['name']" />
+        @endforeach
     </div>
 
     

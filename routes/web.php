@@ -27,15 +27,15 @@ Route::controller(BaseController::class)->group(function()
 Route::get('/flights',function()
 {
     return view('userViews.flights');
-});
+})->name('flights.index');
 Route::get('/destinations',function()
 {
     return view('userViews.destinations');
-});
+})->name('destinations.index');
 Route::get('/hotels',function()
 {
     return view('userViews.hotels');
-});
+})->name('hotels.index');
 Route::get('/dashboard', function () 
 {
     return view('dashboard');

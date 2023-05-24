@@ -1,6 +1,6 @@
 <section class="ji gp uq ml-5">
     {{--! Destinos --}}
-    <x-title-section title="Top destinos más buscados en México" contenido="Escoge el mejor vuelo para tu próxima aventura"/>
+    <x-title-section title="Top destinos más buscados en México" href="{{route('destinations.index')}}" contenido="Escoge el mejor destino para tu próxima aventura"/>
     <div class="bb ye ki xn vq jb jo">
         <div class="wc qf pn xo zf iq">
             <x-card-main ruta="{{asset('images/blog-01.jpg')}}" title="Cancún" country="México" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
@@ -12,7 +12,7 @@
     </div>
 
     {{--! Vuelos --}}
-    <x-title-section title="Los vuelos a mejor precio" contenido="La aventura de espera, no pierdas más tiempo" class="mt-[100px]"/>
+    <x-title-section title="Los vuelos a mejor precio" href="{{route('flights.index')}}" contenido="La aventura de espera, no pierdas más tiempo" class="mt-[100px]"/>
     <div class="bb ye ki xn vq jb jo">
         <div class="wc qf pn xo zf iq">
             <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>

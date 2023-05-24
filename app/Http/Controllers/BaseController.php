@@ -22,6 +22,8 @@ class BaseController extends Controller
         $vuelos = json_decode($this->getData('flights')->getBody(), true);
         
         $destinos = array_reverse($destinos);
+        $hoteles = array_reverse($hoteles);
+        $vuelos = array_reverse($vuelos);
         $destinos = array_splice($destinos, 0, 9);
         $hoteles = array_splice($hoteles, 0, 9);
         $vuelos = array_splice($vuelos, 0, 9);

@@ -4,12 +4,10 @@
     <x-title-section title="Top destinos más buscados en México" contenido="Escoge el mejor vuelo para tu próxima aventura"/>
     <div class="bb ye ki xn vq jb jo">
         <div class="wc qf pn xo zf iq">
-
             @foreach ($destinos as $item)
                 @php
                     $contenedor = json_decode($item['images']);
                     $ruta = str_replace('public/images/', '', $contenedor[0]);
-                    
                 @endphp
                 <x-card-main :ruta="$ruta" :title="$item['name']" :country="$item['addresses']['country']" class="max-w-xs transition duration-300 ease-in-out hover:scale-110"/>
             @endforeach
@@ -20,11 +18,13 @@
     <x-title-section title="Los vuelos a mejor precio" contenido="La aventura de espera, no pierdas más tiempo" class="mt-[100px]"/>
     <div class="bb ye ki xn vq jb jo">
         <div class="wc qf pn xo zf iq">
-            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>
-            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>
-            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>
-            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>
-            <x-card-main-vuelo ruta="{{asset('images/blog-02.jpg')}}" precio="1200" destino="Guerro" aerolinea="Volaris" origen="Toluca"/>
+            @foreach ($vuelos as $item)
+                @php
+                    $contenedor2 = json_decode($item['airline__destinations']['destinations']['images']);
+                    $ruta2 = str_replace('public/images/', '', $contenedor2[0]);
+                @endphp
+                <x-card-main-vuelo :ruta="$ruta2" :precio="$item['price']" :destino="$item['airline__destinations']['destinations']['name']" :aerolinea="$item['airline__destinations']['airlines']['name']" :origen="$item['airline__destinations']['airports']['addresses']['country']" />
+            @endforeach
         </div>
     </div>
 

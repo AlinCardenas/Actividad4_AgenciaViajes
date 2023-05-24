@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Inicio
-Route::controller(BaseController::class)->group(function()
-{
-    Route::get('/', 'main')->name('main');
+//Primer vista
+Route::get('/', function () {
+    return view('auth.login');
 });
+
 //User views
 Route::get('/flights',function()
 {
@@ -41,13 +41,14 @@ Route::get('/dashboard', function ()
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/trips', function () 
-{
-    return view('trips.create');
-})->middleware(['auth', 'verified'])->name('trips');
 
 Route::middleware('auth')->group(function () 
 {
+    // Inicio
+    Route::controller(BaseController::class)->group(function(){
+        Route::get('/inicio', 'main')->name('main');
+    });
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -55,32 +56,7 @@ Route::middleware('auth')->group(function ()
     Route::get('/test', [ApiController::class, 'getFlights']);
 });
 
-//Ruta suscripcion
-Route::post('/suscripcion', [SubscriptionsController::class, 'store'])->name('suscripcion.store');
+// //Ruta suscripcion
+// Route::post('/suscripcion', [SubscriptionsController::class, 'store'])->name('suscripcion.store');
 
 require __DIR__.'/auth.php';
-
-
-
-//Inicio antiguo
-
-Route::get('/', function () {
-    return view('welcome');
-    // return view('example');
-});
-
-
-Route::get('/vuelos', function () {
-    return view('flights.index');
-});
-Route::get('/vuelos/reservar', function () {
-    return view('flights.create');
-});
-
-
-
-
-// //Dasboard con middleware  
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');

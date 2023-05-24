@@ -12,7 +12,7 @@ class BaseController extends Controller
     public function getData($ruta)
     {
         $client = new Client();
-        return $rspeonse = $client->request('GET', 'https://752a-2806-2f0-9f00-ffaf-204c-5c35-4115-5b18.ngrok-free.app/api/' . $ruta, [
+        return $response = $client->request('GET', 'https://752a-2806-2f0-9f00-ffaf-204c-5c35-4115-5b18.ngrok-free.app/api/' . $ruta, [
             'query' => ['limit' => 8]
         ]);
     }
@@ -25,6 +25,16 @@ class BaseController extends Controller
         return $val;
     }
 
+    public function getImages($destinos)
+    {
+        $contenedor = [];
+        foreach ($destinos as $item) {
+            $val = json_decode($item['images']);
+            array_push($contenedor ,$val[0]);
+        }
+        return $contenedor;
+    }
+
     public function main()
     {
         $destinos = $this->reformar($this->getData('destinations')->getBody());
@@ -32,6 +42,8 @@ class BaseController extends Controller
         $vuelos = $this->reformar($this->getData('flights')->getBody());
         $aerolineas = $this->reformar($this->getData('airlines')->getBody(), 4);
 
-        return view('welcome', compact('hoteles', 'vuelos', 'destinos', 'aerolineas'));
+        $contenedor = $this->getImages($destinos);
+
+        return view('welcome', compact('hoteles', 'vuelos', 'destinos', 'aerolineas', 'contenedor'));
     }
 }

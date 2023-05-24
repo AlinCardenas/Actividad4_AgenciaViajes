@@ -18,31 +18,67 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Primer vista
-Route::get('/', function () {
-    return view('auth.login');
+// Inicio
+Route::controller(BaseController::class)->group(function()
+{
+    Route::get('/', 'main')->name('main');
 });
+//User views
+Route::get('/flights',function()
+{
+    return view('userViews.flights');
+})->name('flights.index');
+Route::get('/destinations',function()
+{
+    return view('userViews.destinations');
+})->name('destinations.index');
+Route::get('/hotels',function()
+{
+    return view('userViews.hotels');
+})->name('hotels.index');
+Route::get('/dashboard', function () 
+{
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/trips', function () 
+{
+    return view('trips.create');
+})->middleware(['auth', 'verified'])->name('trips');
 
-Route::middleware('auth')->group(function () {
-
-    // Inicio
-    Route::controller(BaseController::class)->group(function(){
-        Route::get('/inicio', 'main')->name('main');
-    });
-
+Route::middleware('auth')->group(function () 
+{
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//Ruta suscripcion
+Route::post('/suscripcion', [SubscriptionsController::class, 'store'])->name('suscripcion.store');
+
 require __DIR__.'/auth.php';
 
-//! Revisar
-//Ruta suscripcion
-// Route::post('/suscripcion', [SubscriptionsController::class, 'store'])->name('suscripcion.store');
+
+
+//Inicio antiguo
+
+Route::get('/', function () {
+    return view('welcome');
+    // return view('example');
+});
+
+
+Route::get('/vuelos', function () {
+    return view('flights.index');
+});
+Route::get('/vuelos/reservar', function () {
+    return view('flights.create');
+});
 
 
 
 
-
+// //Dasboard con middleware  
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');

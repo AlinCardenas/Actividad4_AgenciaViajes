@@ -1,10 +1,10 @@
-<footer class="bg-primary text-center text-white dark:bg-neutral-600 dark:text-neutral-200">
+<footer class="bg-primary text-center text-white dark:bg-blue-500 dark:text-neutral-200">
     <style>
 
         </style>
     <div class="container p-6">
         <div class="text-3xl font-semibold mb-8 text-black flex flex-row justify-center">
-            <p class="mr-6">¡Feliz viaje!</p>
+            <p class="mr-6 text-white">¡Feliz viaje!</p>
                 <div class="animate-diagonal-left">
                   ✈️
                 </div>
@@ -31,8 +31,8 @@
         </div>
     </div>
 
-    <div class="bg-primary p-4 text-center text-black">
+    <div class="bg-primary p-4 text-center text-white">
         © 2023 Copyright:
-        <a href="#" class="text-black">Bit technologies</a>
+        <a href="#" class="text-white">Bit technologies</a>
     </div>
 </footer>

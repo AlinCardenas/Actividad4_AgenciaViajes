@@ -33,7 +33,7 @@
            <div class="vd wo/4 sd qo f ho oo wf yf" :class="{ 'd hh rm sr td ud qg ug jc yh': navigationOpen }">
                <nav>
                    <ul class="tc _o sf yo cg ep">
-                       <li><a href="{{ url('/') }}" class="xl" :class="{ 'mk': page === 'home' }">Inicio</a>
+                       <li><a href="{{ url('/') }}" class="xl" :class="{ 'mk': page === 'home' }">Vuelos</a>
                        </li>
 
                        <li class="c i" x-data="{ dropdown: false }">

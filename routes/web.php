@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccommodationsController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\ProfileController;
@@ -41,6 +42,12 @@ Route::middleware('auth')->group(function () {
 
 //Ruta suscripcion
 Route::post('/suscripcion', [SubscriptionsController::class, 'store'])->name('suscripcion.store');
+
+//Ruta alojamientos
+
+Route::get('/accommo', function () {
+    return view('accommodations.index');
+})->middleware(['auth', 'verified'])->name('accommodations');
 
 require __DIR__.'/auth.php';
 

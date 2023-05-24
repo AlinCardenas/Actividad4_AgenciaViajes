@@ -8,8 +8,10 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
         <link href="{{asset('css/style.css')}}" rel="stylesheet">
+        <link href="{{asset('css/theme.css')}}" rel="stylesheet">
 
     </head>
     <body x-data="{ page: 'home', 'darkMode': true, 'stickyMenu': false, 'navigationOpen': false, 'scrollTop': true }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode'));
@@ -18,6 +20,7 @@
         @include('partials.body')
         @include('partials.footer')
         <script defer src="{{asset('js/bundle.js')}}"></script>
+        <script defer src="{{asset('js/loopple.js')}}"></script>
         
         
     </body>

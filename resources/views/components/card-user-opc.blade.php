@@ -1,4 +1,4 @@
-<div x-show="isVisible" class="bg-white rounded-lg shadow-md p-4 w-64 absolute bottom-0 left-64">
+<div x-show="isVisible" class="bg-white rounded-lg shadow-md p-4 w-64 fixed inset-x-0 bottom-0 z-50 left-64">
     <div class="mb-4">
         <div class="flex space-x-4 items-center">
             <div><img class="block mx-auto h-8 w-8 rounded-full sm:mx-0 sm:shrink-0"

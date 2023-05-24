@@ -1,8 +1,9 @@
 <x-plantilla title="Reservar">
+    <x-head image="images/buscarV.jpg" text="Reserva tu vuelo" />
     <div class="container max-w-[7xl] mx-auto mt-4">
+        <h1 class="text-3xl font-bold mb-5 text-center">Busca vuelos</h1>
 
-        <div class=" rounded-lg p-2 border-slate-300">
-            <h1 class="text-3xl font-bold mb-5 text-neutral-800 text-center">Busca vuelos</h1>
+        <div class=" rounded-lg p-2 border-slate-300 ">
 
             <div class="grid grid-cols-4 gap-4 mb-5 mx-auto mt-5">
                 <div class="col-span-2">
@@ -23,4 +24,6 @@
             <button type="submit"  class=" shadow-lg px-4 py-2 mt-4 text-white bg-blue-600 hover:bg-blue-500 rounded-md mb-4">Reservar</button>
         </div>
     </div>
+
+
 </x-plantilla>

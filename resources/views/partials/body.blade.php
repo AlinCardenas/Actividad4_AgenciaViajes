@@ -1,3 +1,4 @@
+@dump($hoteles)
 <section class="ji gp uq ml-5">
     {{--! Destinos --}}
     <x-title-section title="Top destinos más buscados en México" contenido="Escoge el mejor vuelo para tu próxima aventura"/>

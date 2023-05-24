@@ -14,9 +14,9 @@ class ApiController extends Controller
     }
 
     //* Get para vuelos
-    public function getFlights(){
+    public function getFlights(){        
         $data = json_decode($this->getData('flights')->getBody(), true);
-        
+
         return view('flights.prueba', compact('data'));
     }
     //* Get para vuelos

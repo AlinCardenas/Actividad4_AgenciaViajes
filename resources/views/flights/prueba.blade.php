@@ -1,5 +1,5 @@
 <x-app-layout>
-    @foreach ($data['data'] as $item)
-        @dump($item['duration'])        
+    @foreach ($data as $item)
+        @dump($item)
     @endforeach
 </x-app-layout>

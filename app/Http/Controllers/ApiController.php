@@ -7,12 +7,28 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    public function getData(){
+    //* Obtiene datos
+    private function getData($ruta){
         $client = new Client();
-        $response = $client->request('GET', 'https://api.nasa.gov/planetary/apod?api_key=UYS6M0xzkXMAruQXVCSF2JOKXbclwK4KRwiOsSUr');
+        return $response = $client->request('GET', 'https://752a-2806-2f0-9f00-ffaf-204c-5c35-4115-5b18.ngrok-free.app/api/' . $ruta);
+    }
 
-        $data = json_decode($response->getBody(), true);
-        // dump($data);
-        return view('pruebas.vista2', ['data' => $data]);
+    //* Get para vuelos
+    public function getFlights(){
+        $data = json_decode($this->getData('flights')->getBody(), true);
+        
+        return view('flights.prueba', compact('data'));
+    }
+    //* Get para vuelos
+    public function getHotels(){
+        $data = json_decode($this->getData('hotels')->getBody(), true);
+        
+        return view('flights.prueba', compact('data'));
+    }
+    //* Get para vuelos
+    public function getDestinations(){
+        $data = json_decode($this->getData('destinations')->getBody(), true);
+        
+        return view('flights.prueba', compact('data'));
     }
 }

@@ -20,7 +20,7 @@ class AuthApiController extends Controller
         $credentials = $request->only('email', 'password');
 
         $client = new Client();
-        $response = $client->post('https://1c04-2806-2f0-9f00-ffaf-d1dc-7ffc-a7d7-3072.ngrok-free.app/api/iniciar', [
+        $response = $client->post('https://7218-2806-2f0-9f00-ffaf-d1dc-7ffc-a7d7-3072.ngrok-free.app/api/iniciar', [
             'form_params' => [
                 'email' => $credentials['email'],
                 'password' => $credentials['password'],
@@ -38,7 +38,7 @@ class AuthApiController extends Controller
                 'token' => $val->token,
                 'user' => $val->data
             ]);
-            return 'Sesión iniciada';
+            return redirect()->route('main');
         } else {
             return "Credenciales inválidas";
         }

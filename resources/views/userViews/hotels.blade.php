@@ -1,4 +1,4 @@
-<x-plantilla title="Hoteles">
+<x-app-layout title="Hoteles">
     
     <x-head image="images/hotel.jpg" text="Descubre los mejores hoteles" />
     
@@ -9,22 +9,19 @@
     
         <div class="flex justify-center">
             <div class="grid grid-cols-5 gap-6 p-4 mx-auto mt-5">
-              <x-cards-body image="images/hotel.jpg" title="Hotelito" content="Desde" price="4500"/>
-              <x-cards-body image="images/hotel.jpg" title="Hotelito" content="Desde" price="4500"/>
-              <x-cards-body image="images/hotel.jpg" title="Hotelito" content="Desde" price="4500"/>
-              <x-cards-body image="images/hotel.jpg" title="Hotelito" content="Desde" price="4500"/>
-              <x-cards-body image="images/hotel.jpg" title="Hotelito" content="Desde" price="4500"/>
-              
-              <x-cards-body image="images/hotel.jpg" title="Hotelito" content="Desde" price="4500"/>
-              <x-cards-body image="images/hotel.jpg" title="Hotelito" content="Desde" price="4500"/>
-              <x-cards-body image="images/hotel.jpg" title="Hotelito" content="Desde" price="4500"/>
-              <x-cards-body image="images/hotel.jpg" title="Hotelito" content="Desde" price="4500"/>
-              <x-cards-body image="images/hotel.jpg" title="Hotelito" content="Desde" price="4500"/>
-              
+              @foreach ($registers as $item)
+                @php
+                    $ruta = str_replace('public/img/', '', $item->logo);
+                @endphp
+                <x-cards-body >
+                  <x-slot name="title">{{$item->name}}</x-slot>
+                  <x-slot name="price">{{$item->price}}</x-slot>
+                  <x-slot name="content">{{$item->addresses->state}}</x-slot>
+                  <x-slot name="logo">{{$ruta}}</x-slot>
+                </x-cards-body>
+              @endforeach
             </div>
           </div>
-    
-          
-          
     </div>
-</x-plantilla>
+    {{ $registers->links() }}
+</x-app-layout>

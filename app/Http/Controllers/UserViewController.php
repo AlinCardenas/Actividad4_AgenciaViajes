@@ -35,8 +35,9 @@ class UserViewController extends Controller
 
     public function getDestinations()
     {
-        $registros = $this->getData('destinations')->getBody();
-        return view('userviews.destinations', compact('registros'));
+        $registros = json_decode($this->getData('flights')->getBody());
+        $registers = $this->paginar($registros);
+        return view('userviews.destinations', compact('registers'));
     }
     public function getFlights()
     {
@@ -46,7 +47,8 @@ class UserViewController extends Controller
     }
     public function getHotels()
     {
-        $registros = $this->getData('hotels')->getBody();
-        return view('userviews.hotels', compact('registros'));
+        $registros = json_decode($this->getData('hotels')->getBody());
+        $registers = $this->paginar($registros);
+        return view('userviews.hotels', compact('registers'));
     }
 }

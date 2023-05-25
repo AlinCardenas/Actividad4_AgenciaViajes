@@ -20,9 +20,20 @@
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="">
                     <h3 class="font-semibold text-2xl text-black text-center my-8">Mis vuelos:</h3>
-                    @foreach ($misvuelos as $item)
-                        @dump($item)
-                    @endforeach
+                    <div class="grid grid-cols-2">
+                        @foreach ($misvuelos as $item)
+                            <x-card-flight>
+                                <x-slot name="destino">
+                                    {{$item['flights']['airline__destinations']['destinations']['name']}}
+                                </x-slot>
+                                <x-slot name="origen">
+                                    {{$item['flights']['airline__destinations']['airports']['addresses']['state']}}
+                                </x-slot>
+                                <x-slot name="llegada">{{$item['leave_date']}}</x-slot>
+                                <x-slot name="salida">{{$item['arrive_date']}}</x-slot>
+                            </x-card-flight>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

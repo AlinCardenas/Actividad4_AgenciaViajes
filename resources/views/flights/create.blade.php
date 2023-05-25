@@ -1,4 +1,5 @@
 <div class="container max-w-[7xl] mx-auto mt-4">
+    
     <h1 class="text-3xl font-bold mb-5 text-center">Busca vuelos</h1>
     <div class=" rounded-lg p-2 border-slate-300 ">
         <div class="grid grid-cols-4 gap-4 mb-5 mx-auto mt-5">
@@ -10,6 +11,7 @@
                     <option value="">opc1</option>
                 </select>
             </div>
+            <x-selectsearch />
             <div class="col-span-2">
                 <p class="font-bold text-neutral-600">Selecciona una fecha</p>
                 <x-flatpickr

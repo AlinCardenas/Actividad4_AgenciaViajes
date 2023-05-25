@@ -1,3 +1,4 @@
-<div>
-    <!-- The whole future lies in uncertainty: live immediately. - Seneca -->
-</div>
+<select class="js-example-basic-single" name="state">
+    <option value="AL">Alabama</option>
+    <option value="WY">Wyoming</option>
+</select>

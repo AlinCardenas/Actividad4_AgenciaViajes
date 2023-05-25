@@ -1,5 +1,9 @@
 
 <section class="ji gp uq ml-5">
+
+    {{--! Formulario de vuelos  --}}
+    @include('flights.create')
+
     {{--! Destinos --}}
     <x-title-section title="Top destinos más buscados en México" href="{{route('destinations.index')}}" contenido="Escoge el mejor destino para tu próxima aventura"/>
     <div class="bb ye ki xn vq jb jo">

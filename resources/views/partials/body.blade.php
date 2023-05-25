@@ -1,6 +1,6 @@
 
 <section class="ji gp uq ml-5">
-
+    @include('layouts.partials.alert')
     {{--! Formulario de vuelos  --}}
     @include('flights.create')
 

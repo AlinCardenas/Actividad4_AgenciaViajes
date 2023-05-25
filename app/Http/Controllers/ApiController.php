@@ -31,7 +31,11 @@ class ApiController extends Controller
         $statusCode = $response->getStatusCode();
     
         if ($statusCode === 200) {
-            return 'Registro creado exitosamente.';
+            Session::flash('alert_message', '¡Vuelo agendado! 🌴🚢🏕️✈️');
+            Session::flash('alert_type', 'success');
+
+            return redirect()->route('main');
+            // return 'Registro creado exitosamente.';
         } else {
             return 'No se pudo crear el registro en la API externa.';
         }

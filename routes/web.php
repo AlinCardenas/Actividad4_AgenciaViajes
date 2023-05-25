@@ -19,29 +19,18 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-// routes/web.php
-Route::get('/auth/login', [AuthApiController::class, 'showLoginForm'])->name('auth.form');
+//* Iniciar sesion
+Route::get('/', [AuthApiController::class, 'showLoginForm'])->name('auth.form');
 Route::post('/auth/login', [AuthApiController::class, 'login'])->name('auth.login');
-Route::post('/auth/ver', [AuthApiController::class, 'getUserDetails'])->name('auth.ver');
 
-
-//Primer vista
-Route::get('/', function () {
-    return view('auth.login');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-
-Route::middleware('auth')->group(function () 
-{
-    //* Inicio
+Route::group(['middleware' => 'session'], function () {
+    //* Ventana principal
     Route::controller(BaseController::class)->group(function(){
         Route::get('/inicio', 'main')->name('main');
     });
+
+    //* Cerrar sesion
+    Route::get('/auth/logout', [AuthApiController::class, 'cerrar']);
 
     //* Vistas de usuario
     Route::controller(UserViewController::class)->group(function() {
@@ -49,15 +38,17 @@ Route::middleware('auth')->group(function ()
         Route::get('/vuelos', 'getFlights')->name('flights.index');
         Route::get('/hoteles', 'getHotels')->name('hotels.index');
     });
-
-    //* Perfil
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
 });
 
-// //Ruta suscripcion
-// Route::post('/suscripcion', [SubscriptionsController::class, 'store'])->name('suscripcion.store');
+
+/*
+    Route::middleware('auth')->group(function () 
+    {
+        //* Perfil
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
+*/
 
 require __DIR__.'/auth.php';

@@ -12,9 +12,7 @@ class BaseController extends Controller
     public function getData($ruta)
     {
         $client = new Client();
-        return $response = $client->request('GET', 'https://752a-2806-2f0-9f00-ffaf-204c-5c35-4115-5b18.ngrok-free.app/api/' . $ruta, [
-            'query' => ['limit' => 8]
-        ]);
+        return $response = $client->request('GET', 'https://fe0c-2806-2f0-9f00-ffaf-10bc-952d-cdd6-f86f.ngrok-free.app/api/' . $ruta);
     }
 
     public function reformar($objeto, $cant = 9)

@@ -4,12 +4,15 @@ namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthApiController extends Controller
 {
     public function showLoginForm()
     {
-        return view('main.example');
+
+        return view('authapi.login');
     }
 
     public function login(Request $request)
@@ -17,7 +20,7 @@ class AuthApiController extends Controller
         $credentials = $request->only('email', 'password');
 
         $client = new Client();
-        $response = $client->post('https://752a-2806-2f0-9f00-ffaf-204c-5c35-4115-5b18.ngrok-free.app/api/auth/login', [
+        $response = $client->post('https://1c04-2806-2f0-9f00-ffaf-d1dc-7ffc-a7d7-3072.ngrok-free.app/api/iniciar', [
             'form_params' => [
                 'email' => $credentials['email'],
                 'password' => $credentials['password'],
@@ -26,34 +29,30 @@ class AuthApiController extends Controller
 
         $statusCode = $response->getStatusCode();
 
-        if ($statusCode === 201) {
+        if ($statusCode === 200) {
             $token = $response->getBody()->getContents();
-            session(['token' => $token]);
-            // return 'Iniciaste sesion 🎉';
-            $token = session('token');
+            $val = json_decode($token);
+            // dump($val->data);
 
-            $client = new Client();
-            $response = $client->get('https://752a-2806-2f0-9f00-ffaf-204c-5c35-4115-5b18.ngrok-free.app/api/getuser', [
-                'headers' => [
-                    'Authorization' => 'Bearer ' . $token,
-                    'Accept' => 'application/json',
-                ],
+            Session::put([
+                'token' => $val->token,
+                'user' => $val->data
             ]);
-
-            $user = json_decode($response->getBody()->getContents());
-
-            $name = $user->name;
-            $email = $user->email;
-
-
-            return view('main.recepcion', compact('name', 'email'));
+            return 'Sesión iniciada';
         } else {
-            return redirect()->back()->withErrors(['message' => 'Credenciales inválidas']);
+            return "Credenciales inválidas";
         }
     }
 
-    public function getUserDetails()
+    public function recepcion()
     {
+        return view('main.recepcion');
+    }
     
+    public function cerrar()
+    {
+        Session::forget('token');
+        Session::forget('user');
+        dump("Sesion cerrada??!!");
     }
 }

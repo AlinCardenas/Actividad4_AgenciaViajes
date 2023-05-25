@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\AuthApiController;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriptionsController;
@@ -18,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// routes/web.php
+Route::get('/auth/login', [AuthApiController::class, 'showLoginForm'])->name('auth.form');
+Route::post('/auth/login', [AuthApiController::class, 'login'])->name('auth.login');
+Route::post('/auth/ver', [AuthApiController::class, 'getUserDetails'])->name('auth.ver');
+
 
 //Primer vista
 Route::get('/', function () {
@@ -47,6 +54,7 @@ Route::middleware('auth')->group(function ()
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
 
 // //Ruta suscripcion

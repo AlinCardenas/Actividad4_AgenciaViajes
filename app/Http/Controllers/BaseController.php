@@ -40,8 +40,10 @@ class BaseController extends Controller
         $vuelos = $this->reformar($this->getData('flights')->getBody());
         $aerolineas = $this->reformar($this->getData('airlines')->getBody(), 4);
 
+        $data = json_decode($this->getData('flights')->getBody());
+
         $contenedor = $this->getImages($destinos);
 
-        return view('welcome', compact('hoteles', 'vuelos', 'destinos', 'aerolineas', 'contenedor'));
+        return view('welcome', compact('hoteles', 'vuelos', 'destinos', 'aerolineas', 'contenedor', 'data'));
     }
 }

@@ -20,7 +20,9 @@
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="">
                     <h3 class="font-semibold text-2xl text-black text-center my-8">Mis vuelos:</h3>
-                    
+                    @foreach ($misvuelos as $item)
+                        @dump($item)
+                    @endforeach
                 </div>
             </div>
         </div>

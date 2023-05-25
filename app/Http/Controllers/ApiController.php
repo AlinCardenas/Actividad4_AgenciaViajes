@@ -6,6 +6,7 @@ use Faker\Core\Number;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use GuzzleHttp\Exception\GuzzleException;
 
 class ApiController extends Controller
 {
@@ -43,6 +44,17 @@ class ApiController extends Controller
     }
 
     public function profile(){
-        return view('profile.edit');
+        
+        $client = new Client();
+
+        $response = $client->get('https://7218-2806-2f0-9f00-ffaf-d1dc-7ffc-a7d7-3072.ngrok-free.app/api/misvuelos/' . Session::get('user')->id);
+    
+        $statusCode = $response->getStatusCode();
+        if ($statusCode === 200) {
+            $misvuelos = json_decode($response->getBody(), true);
+        }else{
+            return "ERROR DESCONOCIDO";
+        }
+        return view('profile.edit', compact("misvuelos"));
     }
 }

@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Session;
 
 class ApiController extends Controller
 {
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         
         $data = $request->all();
         $data0 = null;
@@ -39,5 +40,9 @@ class ApiController extends Controller
         } else {
             return 'No se pudo crear el registro en la API externa.';
         }
+    }
+
+    public function profile(){
+        return view('profile.edit');
     }
 }

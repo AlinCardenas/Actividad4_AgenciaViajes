@@ -11,7 +11,7 @@
         </div>
     </div>
     <div class="text-black">
-        <a href="/profile">
+        <a href="{{route('perfil')}}">
             <i class="fa-regular fa-user mb-2"></i>
             <span>Perfil</span>
         </a>

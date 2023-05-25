@@ -9,11 +9,18 @@
     
         <div class="container max-w-[7xl] mx-auto mt-4">
             <div class="grid grid-cols-2 gap-4 mb-6 mx-auto mt-5">
-                <x-card-vuelos nombre="México" destino="CDMX" fecha="24/06/2023" aerolinea="Vuela bonito" tipo_vuelo="Redondo" />
-                <x-card-vuelos nombre="México" destino="CDMX" fecha="24/06/2023" aerolinea="Vuela bonito" tipo_vuelo="Redondo" />
-                <x-card-vuelos nombre="México" destino="CDMX" fecha="24/06/2023" aerolinea="Vuela bonito" tipo_vuelo="Redondo" />
-                <x-card-vuelos nombre="México" destino="CDMX" fecha="24/06/2023" aerolinea="Vuela bonito" tipo_vuelo="Redondo" />
+                @foreach ($registers as $item)
+                    <x-card-vuelos>
+                        <x-slot name="pais">{{$item->airline__destinations->airports->addresses->country}}</x-slot>
+                        <x-slot name="estado">{{$item->airline__destinations->airports->addresses->state}}</x-slot>
+                        <x-slot name="destino">{{$item->airline__destinations->destinations->addresses->state}}</x-slot>
+                        <x-slot name="fecha">{{$item->leave_date}}</x-slot>
+                        <x-slot name="aerolinea">{{$item->airline__destinations->airlines->name}}</x-slot>
+                        <x-slot name="precio">{{$item->price}}</x-slot>
+                    </x-card-vuelos>
+                @endforeach
             </div>
+            {{ $registers->links() }}
         </div>       
     </div>
 </x-plantilla>

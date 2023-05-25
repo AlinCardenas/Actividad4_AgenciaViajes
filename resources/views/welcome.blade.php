@@ -1,9 +1,10 @@
 <x-app-layout>
     <div class="">
         <x-nav-menu userimg="https://i.pinimg.com/originals/f5/ef/c7/f5efc7bbad1b8f9a5cfdd29be1ccc385.jpg" username="Daniel Delgado">
-            <x-li-nav-menu name="Inicio" icon="fa-solid fa-robot mr-2" route="/" />
-            <x-li-nav-menu name="Inicio" icon="fa-solid fa-robot mr-2" route="/" />
-            <x-li-nav-menu name="Inicio" icon="fa-solid fa-robot mr-2" route="/" />
+            <x-li-nav-menu name="Inicio" icon="fa-solid fa-robot mr-2" href="#" />
+            <x-li-nav-menu name="Vuelos" icon="fa-solid fa-robot mr-2" href="{{route('flights.index')}}" />
+            <x-li-nav-menu name="Destinos" icon="fa-solid fa-robot mr-2" href="{{route('destinations.index')}}" />
+            <x-li-nav-menu name="Hoteles" icon="fa-solid fa-robot mr-2" href="{{route('hotels.index')}}" />
         </x-nav-menu>
     </div>
 

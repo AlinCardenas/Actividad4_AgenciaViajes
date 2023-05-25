@@ -5,8 +5,8 @@
                     src="https://i.pinimg.com/originals/f5/ef/c7/f5efc7bbad1b8f9a5cfdd29be1ccc385.jpg"
                     alt="Woman's Face" /></div>
             <div class="text-black font-bold">
-                <p>Nombre persona</p>
-                <p>cargo</p>
+                <p>{{Session::get('user')->name}}</p>
+                <p>{{Session::get('user')->email}}</p>
             </div>
         </div>
     </div>

@@ -30,7 +30,7 @@ Route::group(['middleware' => 'session'], function () {
     });
 
     //* Cerrar sesion
-    Route::get('/auth/logout', [AuthApiController::class, 'cerrar']);
+    Route::get('/auth/logout', [AuthApiController::class, 'cerrar'])->name('api.logout');
 
     //* Vistas de usuario
     Route::controller(UserViewController::class)->group(function() {

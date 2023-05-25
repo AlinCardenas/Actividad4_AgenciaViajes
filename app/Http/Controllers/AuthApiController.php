@@ -43,16 +43,11 @@ class AuthApiController extends Controller
             return "Credenciales inválidas";
         }
     }
-
-    public function recepcion()
-    {
-        return view('main.recepcion');
-    }
     
     public function cerrar()
     {
         Session::forget('token');
         Session::forget('user');
-        dump("Sesion cerrada??!!");
+        return redirect()->route('auth.form');
     }
 }

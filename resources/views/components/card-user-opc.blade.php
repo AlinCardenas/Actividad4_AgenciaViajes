@@ -16,14 +16,10 @@
             <span>Perfil</span>
         </a>
         <br>
-        <a href="/profile">
-            <i class="fa-solid fa-gear mb-2"></i>
-            <span>Ajustes</span>
-        </a>
         <br>
-        <a href="/profile">
+        <a href="{{route('api.logout')}}">
             <i class="fa-solid fa-arrow-right-to-bracket mb-2"></i>
-            <span>Log out</span>
+            <span>Cerrar sesión</span>
         </a>
     </div>
 </div>

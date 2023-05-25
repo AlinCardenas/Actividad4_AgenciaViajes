@@ -3,7 +3,7 @@
 'userimg' => '',
 ])
 <div class="flex" x-data="{ isVisible: true }">
-    <div class="md:block bg-primary text-gray-500 w-64 fixed top-0 left-0 bottom-0 opacity-60">
+    <div class="md:block bg-[#f4f7f9] text-gray-500 w-64 fixed top-0 left-0 bottom-0 opacity-60">
         <ul class="py-0 h-screen">
             {{ $slot }}
         </ul>

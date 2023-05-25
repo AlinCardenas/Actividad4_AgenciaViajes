@@ -1,4 +1,4 @@
-<footer class="bg-primary text-center text-white dark:bg-neutral-600 dark:text-neutral-200">
+<footer class="bg-[#f4f7f9] text-center text-white">
     <div class="container p-6">
         <div class="text-3xl font-semibold mb-8 text-black flex flex-row justify-center">
             <p class="mr-6">¡Feliz viaje!</p>

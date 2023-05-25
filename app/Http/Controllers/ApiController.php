@@ -13,7 +13,7 @@ class ApiController extends Controller
         
         $data = $request->all();
         $data0 = null;
-        $data0['user_id'] = 1;
+        $data0['user_id'] = Session::get('user')->id;
         $data0['flight_id'] = intval($data['flight_id']);
         $data0['numAsiento'] = intval($data['numAsiento']);
         $data0['leave_date'] = substr($data['fecha'], 0, 10);

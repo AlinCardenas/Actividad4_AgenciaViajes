@@ -21,9 +21,14 @@
             <span>Ajustes</span>
         </a>
         <br>
-        <a href="/profile">
-            <i class="fa-solid fa-arrow-right-to-bracket mb-2"></i>
-            <span>Log out</span>
-        </a>
+        <form method="POST" action="{{ route('logout') }}">
+            @csrf
+            <a href="{{route('logout')}}" onclick="event.preventDefault();
+            this.closest('form').submit();">
+                <i class="fa-solid fa-arrow-right-to-bracket mb-2"></i>
+                <span>Cerrar Sesion</span>
+            </a>
+        </form>
+       
     </div>
 </div>

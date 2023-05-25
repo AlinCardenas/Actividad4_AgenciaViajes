@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccommodationsController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\BaseController;
+use App\Http\Controllers\FlightsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriptionsController;
 use App\Http\Controllers\TripsController;
@@ -68,9 +69,11 @@ Route::get('/vuelos', function () {
 Route::get('/vuelos/reservar', function () {
     return view('flights.create');
 });
+// Route::get('/emails/reservar', function () {
+//     return view('emails.flight_created');
+// });
 
-
-
+Route::resource('/vuelos', FlightsController::class);
 
 // //Dasboard con middleware  
 // Route::get('/dashboard', function () {

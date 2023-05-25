@@ -11,7 +11,6 @@ class AuthApiController extends Controller
 {
     public function showLoginForm()
     {
-
         return view('authapi.login');
     }
 

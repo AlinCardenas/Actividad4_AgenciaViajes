@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 //* Iniciar sesion
 Route::get('/', [AuthApiController::class, 'showLoginForm'])->name('auth.form');
 Route::post('/auth/login', [AuthApiController::class, 'login'])->name('auth.login');
+//* Agendar vuelo
+Route::resource('/mis_vuelos', ApiController::class)->only('store');
 
 Route::group(['middleware' => 'session'], function () {
     //* Ventana principal
@@ -31,6 +33,8 @@ Route::group(['middleware' => 'session'], function () {
 
     //* Cerrar sesion
     Route::get('/auth/logout', [AuthApiController::class, 'cerrar'])->name('api.logout');
+
+
 
     //* Vistas de usuario
     Route::controller(UserViewController::class)->group(function() {
